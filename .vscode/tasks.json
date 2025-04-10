@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0", //version of the task configuration
+	"tasks": [ //An array containing all the task definitions
+		{
+			"type": "cppbuild", //type of task
+			"label": "Build with g++ compiler 14.2.0",
+			"command": "C:/mingw64/bin/g++.exe", //command to run
+			"args": [ //rguments passed to the g++ compiler
+				"-fdiagnostics-color=always",
+				"-g",
+				"-std=c++20",
+				// "${workspaceFolder}\\*.cpp",
+				// "${workspaceFolder}\\$(fileName)",
+				"${file}",
+				"-o",
+				"${fileDirname}\\rooster.exe",
+				"&&",
+				"${fileDirname}\\rooster.exe"
+			],
+			"options": { //Specifies the working directory (cwd) where the command will execute
+				"cwd": "C:/mingw64/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: C:/mingw64/bin/g++.exe"
+		}
+	]
+}
